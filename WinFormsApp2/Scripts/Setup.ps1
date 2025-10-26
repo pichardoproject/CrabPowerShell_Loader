@@ -28,9 +28,9 @@ if ($dialog -ne [System.Windows.Forms.DialogResult]::Yes) {
 
 # --- Variables ---
 $PrimaryName  = "Help_Desk_Admin"
-$PrimaryPass  = "ciab1234"
-$BackupName   = "Help_Desk_CIAB"
-$BackupPass   = "CIAB!@#$"
+$PrimaryPass  = "crab1234"
+$BackupName   = "Help_Desk_CRAB"
+$BackupPass   = "CRAB!@#$"
 $AllowedAdmins = @($PrimaryName, $BackupName)
 
 function To-Secure($p) { ConvertTo-SecureString $p -AsPlainText -Force }
@@ -157,6 +157,6 @@ try {
 }
 
 Write-Log "Setup complete."
-Write-Log "Primary account:  Help_Desk_Admin / ciab1234"
-Write-Log "Backup account:   Help_Desk_CIAB / CIAB!@#$  (hidden)"
+Write-Log "Primary account:  Help_Desk_Admin / crab1234"
+Write-Log "Backup account:   Help_Desk_CIAB / CRAB!@#$  (hidden)"
 Write-Log "=== HELP DESK ADMIN SETUP FINISHED ==="
