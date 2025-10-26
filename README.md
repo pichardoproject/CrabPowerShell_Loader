@@ -1,4 +1,4 @@
-Help Desk Shell – Windows 11 Pro 24H2
+🧰 Help Desk Shell – Windows 11 Pro 24H2
 
 A C# WinForms-based utility for managing and locking down local Windows accounts using PowerShell automation.
 Designed to centralize Help Desk administrative actions (setup, restriction, and undo) inside a single signed .exe with live log output and watermark overlay.
@@ -22,10 +22,12 @@ HelpDeskShell/
 Note: Only crab.png is embedded as a resource.
 All PowerShell scripts must remain external in the Scripts folder beside the compiled .exe.
 
-Compilation
+⚙️ Compilation
 
 Open the .csproj in Visual Studio 2022 or later.
+
 Set build configuration to Release.
+
 Build → output appears under
 bin\Release\net8.0-windows\HelpDeskShell.exe.
 
@@ -34,6 +36,7 @@ Copy these to the deployment folder:
 HelpDeskShell.exe
 crab.png
 /Scripts
+
 
 Example layout:
 
@@ -83,6 +86,7 @@ Use ASCII quotes and safe formatting:
 "$var"
 ("Value: {0}" -f $var)
 
+
 Avoid Word “smart quotes” or long dashes — they cause parse errors when run from the EXE.
 
 4️⃣ Correct Here-String Syntax
@@ -95,6 +99,7 @@ Revision=1
 [Privilege Rights]
 SeDenyNetworkLogonRight = Guest
 "@ | Out-File -Encoding ASCII "$env:TEMP\user_rights.inf"
+
 
 ✅ Close "@ on its own line.
 ✅ Escape $CHICAGO with backticks.
@@ -112,7 +117,9 @@ Runs scripts using:
 
 powershell.exe -NoProfile -ExecutionPolicy Bypass -STA -File "Script.ps1"
 
+
 Captures StandardOutput and StandardError live.
+
 Writes logs both to the on-screen console and /Logs/ folder.
 
 🧾 Example Log Output
@@ -127,17 +134,22 @@ Problem	Cause	Fix
 Script hangs	Read-Host or Pause used	Remove interactive input
 [ERROR] The string is missing the terminator: "	Unclosed quotes or here-string	Verify matching "@
 [ERROR] Missing closing '}'	Unbalanced braces	Re-indent and verify block pairs
-
 🪟 Tested Environment
 
 Windows 11 Pro 24H2 (Build 26100+)
+
 PowerShell 5.1 & 7.4
+
 .NET 8.0 Windows Desktop Runtime
+
 Run context: Elevated Administrator
 
 🧑‍💻 Credits
 
 Developer: Stewart Pichardo
+
 Frontend & Log Engine: GPT-5 Assisted Build
+
 Automation Scripts: Help Desk Admin Toolkit
+
 Generated 2025-10-26
