@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPublishable>True</IsPublishable>
+    <ApplicationIcon>crab.ico</ApplicationIcon>
+    <StartupObject>WinFormsApp2.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="crab.png" />
+    <None Remove="Scripts\Restrict.ps1" />
+    <None Remove="Scripts\Setup.ps1" />
+    <None Remove="Scripts\Undo.ps1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="crab.ico" />
+    <Content Include="crab.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Restrict.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Setup.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Undo.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
